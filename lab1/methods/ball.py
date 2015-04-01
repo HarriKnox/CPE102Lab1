@@ -15,8 +15,8 @@ class Ball:
       self.dx = dx
       self.dy = dy
 
-def draw_ball(ball, screen):
-   pygame.draw.ellipse(screen, ball.color,
-      pygame.Rect(ball.x - ball.radius, ball.y - ball.radius,
-         ball.radius * 2, ball.radius * 2)) 
+   def draw_ball(self, screen):
+      pygame.draw.ellipse(screen, self.color,
+         pygame.Rect(self.x - self.radius, self.y - self.radius,
+            self.radius * 2, self.radius * 2)) 
 
