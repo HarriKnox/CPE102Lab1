@@ -1,23 +1,13 @@
-public class MultiplyExpression
-   implements Expression
+public class MultiplyExpression extends BinaryExpression
 {
-   private Expression lft;
-   private Expression rht;
-
    public MultiplyExpression(Expression lft, Expression rht)
    {
-      this.lft = lft;
-      this.rht = rht;
+      super(lft, rht, "*");
    }
 
-   public String toString()
+   protected double _applyOperator(double lft, double rht)
    {
-      return "(" + lft + " * " + rht + ")";
-   }
-
-   public double evaluate(Bindings bindings)
-   {
-      return lft.evaluate(bindings) * rht.evaluate(bindings);
+      return lft * rht;
    }
 }
 

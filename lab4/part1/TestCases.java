@@ -7,6 +7,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
 public class TestCases
@@ -28,8 +29,7 @@ public class TestCases
    @Test
    public void testSimpleIf3()
    {
-      fail("Missing SimpleIf3");
-      /* TO DO: Write one more valid test case. */
+      assertEquals(-48.2, SimpleIf.max(-314.15, -48.2), DELTA);
    }
 
    @Test
@@ -47,9 +47,7 @@ public class TestCases
    @Test
    public void testSimpleLoop3()
    {
-      fail("Missing SimpleLoop3");
-      /* TO DO: Write one more valid test case to make sure that
-         this function is not just returning 7. */
+      assertEquals(45, SimpleLoop.sum(0, 9));
    }
 
    @Test
@@ -71,8 +69,8 @@ public class TestCases
    @Test
    public void testSimpleArray3()
    {
-      fail("Missing SimpleArray3");
-      /* TO DO: Add a new test case. */
+      assertArrayEquals(null,
+         SimpleArray.squareAll(new int[] {-1, -3, 5}), new int[] {1, 9, 25});
    }
 
    @Test
@@ -85,14 +83,23 @@ public class TestCases
 
       assertEquals(expected, SimpleList.squareAll(input));
 
-      /* TO DO: Add a new test case. */
+      List<Integer> otherInput =
+         new LinkedList<Integer>(Arrays.asList(new Integer[] {-13, 6, 7, -5, 3, -8}));
+      List<Integer> otherExpected =
+         new ArrayList<Integer>(Arrays.asList(new Integer[] {169, 36, 49, 25, 9, 64}));
+
+      assertEquals(otherExpected, SimpleList.squareAll(otherInput));
    }
 
    @Test
    public void testSimpleList2()
    {
-      fail("Missing SimpleList2");
-      /* TO DO: Add a new test case. */
+      List<Integer> input =
+         new LinkedList<Integer>(Arrays.asList(new Integer[] {7, -5, 13, 2, 4, -15, -8, 15, 7, 9, -9}));
+      List<Integer> expected =
+         new ArrayList<Integer>(Arrays.asList(new Integer[] {49, 25, 169, 4, 16, 225, 64, 225, 49, 81, 81}));
+
+      assertEquals(expected, SimpleList.squareAll(input));
    }
 
    @Test
@@ -110,7 +117,6 @@ public class TestCases
    @Test
    public void testBetterLoop3()
    {
-      fail("Missing BetterLoop3");
-      /* TO DO: Write a valid test case where the expected result is false. */
+      assertFalse(BetterLoop.contains(new int[] {1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233}, 7));
    }
 }

@@ -1,23 +1,13 @@
-public class SubtractExpression
-   implements Expression
+public class SubtractExpression extends BinaryExpression
 {
-   private Expression lft;
-   private Expression rht;
-
    public SubtractExpression(Expression lft, Expression rht)
    {
-      this.lft = lft;
-      this.rht = rht;
+      super(lft, rht, "-");
    }
-
-   public String toString()
+   
+   protected double _applyOperator(double left, double right)
    {
-      return "(" + lft + " - " + rht + ")";
-   }
-
-   public double evaluate(Bindings bindings)
-   {
-      return lft.evaluate(bindings) - rht.evaluate(bindings);
+      return left - right;
    }
 }
 

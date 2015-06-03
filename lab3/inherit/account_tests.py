@@ -20,6 +20,17 @@ class TestCases(unittest.TestCase):
       savings.returnItem(20)
       self.assertEqual(savings.getBalance(), 1020)
 
+   def test_4(self):
+      savings = account.PremiumAccount(1000)
+      self.assertEqual(savings.getBalance(), 1000)
+      savings.purchaseItem(20)
+      self.assertEqual(savings.getBalance(), 982)
+
+   def test_5(self):
+      savings = account.PremiumAccount(1000)
+      self.assertEqual(savings.getBalance(), 1000)
+      savings.returnItem(20)
+      self.assertEqual(savings.getBalance(), 1018)
 
 # Run the unit tests.
 if __name__ == '__main__':
